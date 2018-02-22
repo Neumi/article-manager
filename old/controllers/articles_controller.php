@@ -5,7 +5,6 @@ class ArticlesController
     public function index()
     {
         $articles = Article::all();
-
         require_once('views/articles/index.php');
     }
 
@@ -46,15 +45,7 @@ class ArticlesController
 
     public function deleteEntryById()
     {
-        $answer = Article::deleteEntryById($_GET['id']);
-
-        if ($answer == 1) {
-            $_POST['notification'] = "Successfully removed article from db!";
-            return call('pages', 'home');
-        } else {
-            $_POST['error_message'] = "error while removing article!";
-            return call('pages', 'error');
-        }
+        Article::deleteEntryById($_GET['id']);
     }
 }
 

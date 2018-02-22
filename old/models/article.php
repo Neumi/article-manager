@@ -10,14 +10,14 @@ class Article
     public $beschreibung;
     public $erstellungsdatum;
 
-    public function __construct($id, $artikelnummer, $bezeichnung, $beschreibung, $einkaufspreis, $verkaufspreis, $erstellungsdatum)
+    public function __construct($id, $artikelnummer, $bezeichnung, $einkaufspreis, $verkaufspreis, $beschreibung, $erstellungsdatum)
     {
         $this->id = $id;
         $this->artikelnummer = $artikelnummer;
         $this->bezeichnung = $bezeichnung;
-        $this->beschreibung = $beschreibung;
         $this->einkaufspreis = $einkaufspreis;
         $this->verkaufspreis = $verkaufspreis;
+        $this->beschreibung = $beschreibung;
         $this->erstellungsdatum = $erstellungsdatum;
     }
 
@@ -25,7 +25,7 @@ class Article
     {
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query('SELECT * FROM artikel ORDER BY id DESC');
+        $req = $db->query('SELECT * FROM artikel');
 
         foreach ($req->fetchAll() as $article) {
             $list[] = new Article($article['id'], $article['artikelnummer'], $article['bezeichnung'], $article['beschreibung'], $article['einkaufspreis'], $article['verkaufspreis'], $article['erstellungsdatum']);
@@ -41,11 +41,7 @@ class Article
         $req->execute(array('id' => $id));
         $article = $req->fetch();
 
-        $articleObject = new Article($article['id'], $article['artikelnummer'], $article['bezeichnung'], $article['beschreibung'], $article['einkaufspreis'], $article['verkaufspreis'], $article['erstellungsdatum']);
-
-        return $articleObject;
-
-
+        return new Article($article['id'], $article['artikelnummer'], $article['bezeichnung'], $article['beschreibung'], $article['einkaufspreis'], $article['verkaufspreis'], $article['erstellungsdatum']);
     }
 
     public static function addEntryToDb($artikelnummer, $bezeichnung, $beschreibung, $einkaufspreis, $verkaufspreis)
@@ -61,9 +57,8 @@ class Article
     {
         $db = Db::getInstance();
         $sql = sprintf('DELETE FROM artikel WHERE id =  %s', $id);
+        echo $sql;
         $db->query($sql);
-
-        return 1;
     }
 
 }
