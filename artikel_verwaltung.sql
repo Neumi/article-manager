@@ -48,6 +48,11 @@ VALUES
 	(5,5,'Handschuhe',5.69,24.95,'Winterhandschuhe. Für die kalten Tage.','2018-02-20 12:53:04'),
 	(6,6,'Armbanduhr',19.29,114.25,'Armbanduhr. Grünes Leder.','2018-02-20 12:53:36');
 
+
+
+
+
+
 /*!40000 ALTER TABLE `artikel` ENABLE KEYS */;
 UNLOCK TABLES;
 

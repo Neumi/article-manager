@@ -15,15 +15,16 @@
 <body class="w3-theme-l5">
 
 
-
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-        <a href="?controller=articles&action=index" class="w3-bar-item w3-button w3-padding-large w3-theme-d4" title="home"><i class="fa fa-archive w3-margin-right"></i>Article Manager</a>
-        <a href="?controller=articles&action=add" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="add article"><i class="fa fa-plus"></i></a>
+        <a href="?controller=articles&action=index" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+           title="home"><i class="fa fa-archive w3-margin-right"></i>Article Manager</a>
+        <a href="?controller=articles&action=add"
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="add article"><i
+                    class="fa fa-plus"></i></a>
     </div>
 </div>
-
 
 
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
