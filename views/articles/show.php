@@ -17,10 +17,15 @@
                     <br>
                     <br>
 
-                    <a href='?controller=articles&action=deleteEntryById&id=<?php echo $article->id; ?>' class="w3-button w3-red w3-right"><i class="fa fa-trash"></i>  Delete</a>
+                    <a href='?controller=articles&action=deleteEntryById&id=<?php echo $article->id; ?>'
+                       class="w3-button w3-red w3-right"><i class="fa fa-trash"></i>  Delete</a>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+
+
+
+
